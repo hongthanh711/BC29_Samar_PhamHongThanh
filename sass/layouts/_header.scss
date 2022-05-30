@@ -12,14 +12,41 @@ header {
   .navbar {
     .nav-item {
       padding-left: 30px;
+      .icon {
+        .nav-link {
+          i {
+            transition: all 0.5s;
+          }
+        }
+        .nav-link:hover {
+          i {
+            color: $color-primary;
+          }
+        }
+      }
       .nav-link {
         color: black !important;
         font-weight: 600;
         transition: all 0.5s;
+      }
+    }
+
+    .nav-item:last-child {
+      .nav-link:first-child.btn-violet {
+        color: #fff !important;
+        &:hover {
+          color: $color-primary !important;
+        }
+      }
+    }
+
+    .nav-item:not(:last-child) {
+      .nav-link {
+        position: relative;
         &:hover {
           color: $color-primary !important;
           &::after {
-            transform: scale(1);
+            transform: translateX(-50%) scale(1);
           }
         }
         &::after {
@@ -29,10 +56,11 @@ header {
           height: 10px;
           border-radius: 50%;
           background-color: $color-primary;
-          margin: 0 auto;
-          transform: scale(0);
           transition: all 0.5s;
           margin-top: 10px;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%) scale(0);
         }
       }
     }

@@ -103,8 +103,7 @@
                 <div class="col-3" style="width:400px">
                     <div class="card">
                         <img class="card-img-top" src="./images/teacher_1.jpg" alt="Card image">
-                        <div class="card-body">
-                            <p class="card-info">ITALIAN</p>
+                        <div class="card-info">ITALIAN</p>
                             <h4 class="card-title">July Roberts</h4>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                         </div>
@@ -198,17 +197,29 @@
                     </h1>
                     <div class="form-input">
                         <div class="row">
-                            <input type="text" id="name" placeholder="Name" class="col-6">
-                            <input type="text" id="email" placeholder="E-Mail" class="col-6">
+                            <div class="col-6 form-control">
+                                <i class="fa-solid fa-user-injured"></i>
+                                <input type="text" id="name" placeholder="Name">
+                            </div>
+                            <div class="col-6 form-control">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="text" id="email" placeholder="E-Mail">
+                            </div>
 
-                            <select name="" id="language" class="col-12">
-                                <option value="english">English</option>
-                                <option value="french">French</option>
-                                <option value="spanish">Spanish</option>
-                                <option value="german">German</option>
-                            </select>
-                            <textarea name="" id="" cols="100%" rows="4" class="message" placeholder="Message"
-                                class="col-12"></textarea>
+                            <div class="col-12 form-control d-flex">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <select name="" id="language">
+                                    <option value="english">English</option>
+                                    <option value="french">French</option>
+                                    <option value="spanish">Spanish</option>
+                                    <option value="german">German</option>
+                                </select>
+                            </div>
+                            <div class="col-12 form-control d-flex">
+                                <i class="fa-solid fa-message"></i>
+                                <textarea name="" id="" cols="100%" rows="4" class="message"
+                                    placeholder="Message"></textarea>
+                            </div>
                         </div>
                     </div>
                     <a href="" class="btn-violet">Send</a>

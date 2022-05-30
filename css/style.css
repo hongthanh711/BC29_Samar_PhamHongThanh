@@ -17,6 +17,8 @@ pre,
 form,
 fieldset,
 input,
+.form .form__content .form-input .form-control select,
+.form .form__content .form-input .form-control textarea,
 textarea,
 p,
 blockquote,
@@ -42,7 +44,10 @@ img {
   border: 0;
 }
 
-input {
+
+input,
+.form .form__content .form-input .form-control select,
+.form .form__content .form-input .form-control textarea {
   border: 1px solid #b0b0b0;
   padding: 3px 5px 4px;
   color: #979797;
@@ -97,6 +102,7 @@ acronym {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   color: #fff !important;
+  text-transform: uppercase;
 }
 
 .btn-violet:hover {
@@ -146,6 +152,15 @@ header .navbar .nav-item {
   padding-left: 30px;
 }
 
+header .navbar .nav-item .icon .nav-link i {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header .navbar .nav-item .icon .nav-link:hover i {
+  color: #b61984;
+}
+
 header .navbar .nav-item .nav-link {
   color: black !important;
   font-weight: 600;
@@ -153,28 +168,41 @@ header .navbar .nav-item .nav-link {
   transition: all 0.5s;
 }
 
-header .navbar .nav-item .nav-link:hover {
+header .navbar .nav-item:last-child .nav-link:first-child.btn-violet {
+  color: #fff !important;
+}
+
+header .navbar .nav-item:last-child .nav-link:first-child.btn-violet:hover {
   color: #b61984 !important;
 }
 
-header .navbar .nav-item .nav-link:hover::after {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+header .navbar .nav-item:not(:last-child) .nav-link {
+  position: relative;
 }
 
-header .navbar .nav-item .nav-link::after {
+header .navbar .nav-item:not(:last-child) .nav-link:hover {
+  color: #b61984 !important;
+}
+
+header .navbar .nav-item:not(:last-child) .nav-link:hover::after {
+  -webkit-transform: translateX(-50%) scale(1);
+          transform: translateX(-50%) scale(1);
+}
+
+header .navbar .nav-item:not(:last-child) .nav-link::after {
   content: "";
   display: block;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #b61984;
-  margin: 0 auto;
-  -webkit-transform: scale(0);
-          transform: scale(0);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%) scale(0);
+          transform: translateX(-50%) scale(0);
 }
 
 .carousel {
@@ -264,6 +292,32 @@ header .navbar .nav-item .nav-link::after {
   border-radius: 20px;
 }
 
+.form .form__content a.btn-violet {
+  padding: 10px 80px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.form .form__content a.btn-violet::before {
+  content: "";
+}
+
+.form .form__content .form-input .form-control {
+  border-radius: 20px;
+}
+
+.form .form__content .form-input .form-control input, .form .form__content .form-input .form-control select, .form .form__content .form-input .form-control textarea {
+  border: none;
+}
+
+.form .form__content .form-input .form-control input:focus-visible, .form .form__content .form-input .form-control select:focus-visible, .form .form__content .form-input .form-control textarea:focus-visible {
+  outline: none;
+}
+
+.form .form__content .form-input .form-control select, .form .form__content .form-input .form-control textarea {
+  width: 100%;
+}
+
 .form h1 {
   font-size: 40px;
   font-weight: 700;
@@ -273,7 +327,7 @@ header .navbar .nav-item .nav-link::after {
 footer {
   padding: 100px 0 200px;
   color: #fff;
-  background-image: url(../../images/footer_background.jpg);
+  background-image: url(./../../images/footer_background.jpg);
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -331,7 +385,7 @@ footer .letter .info {
   margin-top: 50px;
 }
 
-footer .letter .info input {
+footer .letter .info input, footer .letter .info .form .form__content .form-input .form-control select, .form .form__content .form-input .form-control footer .letter .info select, footer .letter .info .form .form__content .form-input .form-control textarea, .form .form__content .form-input .form-control footer .letter .info textarea {
   width: 100%;
   background-color: transparent;
   color: #fff;
@@ -344,7 +398,7 @@ footer .letter .info input {
   transition: all 0.5s;
 }
 
-footer .letter .info input:focus-visible {
+footer .letter .info input:focus-visible, footer .letter .info .form .form__content .form-input .form-control select:focus-visible, .form .form__content .form-input .form-control footer .letter .info select:focus-visible, footer .letter .info .form .form__content .form-input .form-control textarea:focus-visible, .form .form__content .form-input .form-control footer .letter .info textarea:focus-visible {
   border: 1px solid #fff;
   outline: none;
 }
