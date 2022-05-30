@@ -64,5 +64,9 @@ header {
         }
       }
     }
+    // .active::after {
+    //   @extend .nav-link::after;
+    //   transform: translateX(-50%) scale(1);
+    // }
   }
 }
