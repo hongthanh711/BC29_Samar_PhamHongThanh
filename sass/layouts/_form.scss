@@ -1,0 +1,13 @@
+.form {
+  background-image: url(./../../images/accent_bottom_wave_01.png);
+  @include background(bottom, contain);
+  .form__content {
+    background-color: #fff;
+    border-radius: 20px;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+  }
+}

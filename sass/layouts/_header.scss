@@ -1,0 +1,40 @@
+.header-fixed {
+  background-color: #fff;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 2;
+
+  .navbar {
+    .nav-item {
+      padding-left: 30px;
+      .nav-link {
+        color: black !important;
+        font-weight: 600;
+        transition: all 0.5s;
+        &:hover {
+          color: $color-primary !important;
+          &::after {
+            transform: scale(1);
+          }
+        }
+        &::after {
+          content: "";
+          display: block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $color-primary;
+          margin: 0 auto;
+          transform: scale(0);
+          transition: all 0.5s;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
